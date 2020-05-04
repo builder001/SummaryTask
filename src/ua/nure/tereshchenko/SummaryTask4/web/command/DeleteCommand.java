@@ -15,6 +15,11 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
+/**
+ * Delete command
+ *
+ * @author A.Tereshchenko
+ */
 public class DeleteCommand extends Command {
     private static final Logger LOG = Logger.getLogger(DeleteCommand.class);
 

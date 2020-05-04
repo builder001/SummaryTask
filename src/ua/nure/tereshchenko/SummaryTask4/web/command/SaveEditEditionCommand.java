@@ -15,6 +15,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * Save edit edition command.
+ *
+ * @author A.Tereshchenko
+ */
 public class SaveEditEditionCommand extends Command {
     private static final Logger LOG = Logger.getLogger(SaveEditEditionCommand.class);
 

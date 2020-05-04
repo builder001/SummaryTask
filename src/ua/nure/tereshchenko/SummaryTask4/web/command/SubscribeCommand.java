@@ -17,6 +17,11 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
+/**
+ * Subscribe command.
+ *
+ * @author A.Tereshchenko
+ */
 public class SubscribeCommand extends Command {
     private static final Logger LOG = Logger.getLogger(SubscribeCommand.class);
 

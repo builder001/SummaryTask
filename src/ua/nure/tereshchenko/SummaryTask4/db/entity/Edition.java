@@ -1,15 +1,13 @@
 package ua.nure.tereshchenko.SummaryTask4.db.entity;
+
 /**
  * Edition entity.
  *
- *
+ * @author A.Tereshchenko
  */
 public class Edition extends Entity {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5610736585433411713L;
-	private String name;
+    private static final long serialVersionUID = -5610736585433411713L;
+    private String name;
     private Integer price;
     private Integer categoryId;
 
@@ -42,5 +40,4 @@ public class Edition extends Entity {
         return "Edition [name=" + name + ", price=" + price + ", categoryId="
                 + categoryId + ", getId()=" + getId() + "]";
     }
-
 }

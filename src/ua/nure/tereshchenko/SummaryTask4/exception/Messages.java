@@ -3,6 +3,7 @@ package ua.nure.tereshchenko.SummaryTask4.exception;
 /**
  * Holder for messages of exceptions.
  *
+ * @author A.Tereshchenko
  */
 public class Messages {
     private Messages() {

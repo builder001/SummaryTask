@@ -15,6 +15,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Settings command.
+ *
+ * @author A.Tereshchenko
+ */
 public class SettingsCommand extends Command {
     private static final Logger LOG = Logger.getLogger(SettingsCommand.class);
     @Override

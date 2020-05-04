@@ -1,8 +1,9 @@
 package ua.nure.tereshchenko.SummaryTask4.db;
+
 /**
  * Holder for fields names of DB tables and beans.
  *
- *
+ * @author A.Tereshchenko
  */
 public final class Fields {
     // entities

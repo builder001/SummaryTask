@@ -14,15 +14,18 @@ import javax.servlet.http.HttpSessionListener;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Session listener.
+ *
+ * @author A.Tereshchenko
+ */
 public class SessionListener implements HttpSessionListener {
     private static final Logger LOG = Logger.getLogger(SessionListener.class);
-    
-    
-    
+
     @Override
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
         LOG.debug("Start session");
-      
+
         HttpSession httpSession = httpSessionEvent.getSession();
         String id = httpSession.getId();
         if (httpSession.isNew()) {
@@ -30,7 +33,7 @@ public class SessionListener implements HttpSessionListener {
         }
 
         DBManager manager = null;
-		manager = DBManager.getInstance();
+        manager = DBManager.getInstance();
         LOG.debug("Start loading of all edition");
         List<Edition> editionList = null;
         Map<Integer, Category> categoryMap = null;
@@ -49,11 +52,9 @@ public class SessionListener implements HttpSessionListener {
     @Override
     public void sessionDestroyed(HttpSessionEvent httpSessionEvent) {
         HttpSession httpSession = httpSessionEvent.getSession();
-        if(httpSession.getAttribute("id") != null) {
+        if (httpSession.getAttribute("id") != null) {
             LOG.debug("Session destroyed");
             httpSession.removeAttribute("id");
         }
-
-
     }
 }

@@ -2,10 +2,20 @@ package ua.nure.tereshchenko.SummaryTask4.web.filter;
 
 import org.apache.log4j.Logger;
 
-import javax.servlet.*;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
+/**
+ * Encoding filter.
+ *
+ * @author A.Tereshchenko
+ */
 public class EncodingFilter implements Filter {
     private static final Logger LOG = Logger.getLogger(EncodingFilter.class);
     private String encoding;

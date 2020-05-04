@@ -16,6 +16,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Account command.
+ *
+ * @author A.Tereshchenko
+ */
 public class AccountCommand extends Command {
     private static final Logger LOG = Logger.getLogger(AccountCommand.class);
 

@@ -17,7 +17,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Loading edition command.
+ *
+ * @author A.Tereshchenko
+ */
 public class LoadingEditionCommand extends Command {
     private static final Logger LOG = Logger.getLogger(LoadingEditionCommand.class);
 

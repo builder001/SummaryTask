@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Find account command.
+ *
+ * @author A.Tereshchenko
+ */
 public class FundAccountCommand extends Command {
     private static final Logger LOG = Logger.getLogger(FundAccountCommand.class);
     @Override

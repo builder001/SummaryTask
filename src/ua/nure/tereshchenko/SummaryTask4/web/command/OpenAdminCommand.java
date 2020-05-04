@@ -17,6 +17,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Open admin command.
+ *
+ * @author A.Tereshchenko
+ */
 public class OpenAdminCommand extends Command {
     private static final Logger LOG = Logger.getLogger(OpenAdminCommand.class);
 

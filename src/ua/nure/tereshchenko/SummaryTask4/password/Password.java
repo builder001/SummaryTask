@@ -4,10 +4,21 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Password hash.
+ *
+ * @author A.Tereshchenko
+ */
 public final class Password {
-    private static final char[] HEX_DIGITS = { '0', '1', '2', '3', '4', '5',
-            '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+    private static final char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5',
+            '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
+    /**
+     * @param str Plain password string.
+     * @return hashed password string.
+     * @throws NoSuchAlgorithmException
+     * @throws UnsupportedEncodingException
+     */
     public static String hash(String str) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         MessageDigest digest;
         StringBuffer hexString = new StringBuffer();

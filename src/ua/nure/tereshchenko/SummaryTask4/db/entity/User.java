@@ -1,15 +1,13 @@
 package ua.nure.tereshchenko.SummaryTask4.db.entity;
+
 /**
  * User entity.
  *
- *
+ * @author A.Tereshchenko
  */
 public class User extends Entity {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 735269203404466126L;
-	private String login;
+    private static final long serialVersionUID = 735269203404466126L;
+    private String login;
     private String password;
     private String firstName;
     private String lastName;

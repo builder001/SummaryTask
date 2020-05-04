@@ -8,6 +8,7 @@ import java.util.TreeMap;
 /**
  * Holder for all commands.
  *
+ * @author A.Tereshchenko
  */
 public class CommandContainer {
     private static final Logger LOG = Logger.getLogger(CommandContainer.class);

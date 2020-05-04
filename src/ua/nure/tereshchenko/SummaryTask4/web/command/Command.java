@@ -6,12 +6,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * Main interface for the Command pattern implementation.
  *
+ * @author A.Tereshchenko
  */
-public abstract class Command {
+public abstract class Command implements Serializable {
     /**
      * Execution method for command.
      *

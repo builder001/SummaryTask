@@ -15,6 +15,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Enumeration;
 
+/**
+ * Lock/unlock command.
+ *
+ * @author A.Tereshchenko
+ */
 public class LockUnlockCommand extends Command {
     private static final Logger LOG = Logger.getLogger(LockUnlockCommand.class);
 

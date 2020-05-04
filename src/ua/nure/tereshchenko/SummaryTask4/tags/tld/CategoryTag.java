@@ -13,13 +13,11 @@ import java.util.Map;
 /**
  * Create own tag.
  *
+ * @author A.Tereshchenko
  */
 public class CategoryTag extends TagSupport {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6412519798490528815L;
-	private static final Logger LOG = Logger.getLogger(CategoryTag.class);
+    private static final long serialVersionUID = 6412519798490528815L;
+    private static final Logger LOG = Logger.getLogger(CategoryTag.class);
     private int id;
 
     public void setId(String id) {
@@ -30,7 +28,7 @@ public class CategoryTag extends TagSupport {
     public int doStartTag() throws JspException {
         LOG.debug("Method doStartTag() starts");
         HttpSession httpSession = pageContext.getSession();
-        Map <Integer, Category> categoryMap = (Map <Integer, Category>) httpSession.getAttribute("categoryList");
+        Map<Integer, Category> categoryMap = (Map<Integer, Category>) httpSession.getAttribute("categoryList");
         Category category = categoryMap.get(id);
         try {
             pageContext.getOut().write(category.getName());

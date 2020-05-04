@@ -13,7 +13,7 @@
 
 	<!--============================================================
 	Controller
-		============================================================= -->
+	============================================================= -->
 	<servlet>
 		<servlet-name>Controller</servlet-name>
 		<servlet-class>ua.nure.tereshchenko.SummaryTask4.web.Controller</servlet-class>
@@ -24,8 +24,9 @@
 		<url-pattern>/controller</url-pattern>
 	</servlet-mapping>
 
-	<!--============================================================ Encoding 
-		support filter ============================================================= -->
+	<!--============================================================
+	Encoding support filter
+	============================================================= -->
 	<filter>
 		<filter-name>EncodingFilter</filter-name>
 		<filter-class>ua.nure.tereshchenko.SummaryTask4.web.filter.EncodingFilter</filter-class>
@@ -41,16 +42,18 @@
 		<servlet-name>Controller</servlet-name>
 	</filter-mapping>
 
-	<!--============================================================ Listeners 
-		============================================================= -->
+	<!--============================================================
+	Listeners
+	============================================================= -->
 	<listener>
 		<listener-class>ua.nure.tereshchenko.SummaryTask4.web.listener.ContextListener</listener-class>
 	</listener>
 	<listener>
 		<listener-class>ua.nure.tereshchenko.SummaryTask4.web.listener.SessionListener</listener-class>
 	</listener>
-	<!--============================================================ Error page 
-		============================================================= -->
+	<!--============================================================
+	Error page
+	============================================================= -->
 	<error-page>
 		<exception-type>java.lang.Throwable</exception-type>
 		<location>/jsp/error_page.jsp</location>
@@ -60,8 +63,9 @@
 		<error-code>404</error-code>
 		<location>/jsp/error_page.jsp</location>
 	</error-page>
-	<!--============================================================ Resource 
-		Bundle ============================================================= -->
+	<!--============================================================
+	Resource Bundle
+	============================================================= -->
 	<context-param>
 		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
 		<param-value>resources</param-value>
@@ -74,6 +78,5 @@
 		<param-name>locales</param-name>
 		<param-value>/WEB-INF/locales.properties</param-value>
 	</context-param>
-
 
 </web-app>

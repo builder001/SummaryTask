@@ -19,6 +19,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Open user command.
+ *
+ * @author A.Tereshchenko
+ */
 public class OpenUserCommand extends Command {
     private static final Logger LOG = Logger.getLogger(OpenUserCommand.class);
 

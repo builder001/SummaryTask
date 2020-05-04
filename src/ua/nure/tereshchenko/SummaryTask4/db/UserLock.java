@@ -5,7 +5,7 @@ import ua.nure.tereshchenko.SummaryTask4.db.entity.User;
 /**
  * UserLock entity.
  *
- *
+ * @author A.Tereshchenko
  */
 public enum UserLock {
     LOCK, UNLOCKED;

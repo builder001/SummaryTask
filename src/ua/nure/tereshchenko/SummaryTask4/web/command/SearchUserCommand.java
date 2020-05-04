@@ -15,6 +15,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Search user command.
+ *
+ * @author A.Tereshchenko
+ */
 public class SearchUserCommand extends Command {
     private static final Logger LOG = Logger.getLogger(SearchUserCommand.class);
     @Override

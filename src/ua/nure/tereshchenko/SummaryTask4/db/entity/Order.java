@@ -1,15 +1,13 @@
 package ua.nure.tereshchenko.SummaryTask4.db.entity;
+
 /**
  * Order entity.
  *
- *
+ * @author A.Tereshchenko
  */
 public class Order extends Entity {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5642183946018260480L;
-	private Integer bill;
+    private static final long serialVersionUID = -5642183946018260480L;
+    private Integer bill;
     private Integer userId;
     private Integer statusId;
 
@@ -39,7 +37,7 @@ public class Order extends Entity {
 
     @Override
     public String toString() {
-        return "Order [id="+getId() + ", bill=" + bill + ", userId=" + userId + ", statusId="
+        return "Order [id=" + getId() + ", bill=" + bill + ", userId=" + userId + ", statusId="
                 + statusId + "]";
     }
 }

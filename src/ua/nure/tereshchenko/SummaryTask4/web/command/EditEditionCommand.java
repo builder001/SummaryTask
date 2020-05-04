@@ -16,6 +16,11 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Edit edition command.
+ *
+ * @author A.Tereshchenko
+ */
 public class EditEditionCommand extends Command {
     private static final Logger LOG = Logger.getLogger(EditEditionCommand.class);
 

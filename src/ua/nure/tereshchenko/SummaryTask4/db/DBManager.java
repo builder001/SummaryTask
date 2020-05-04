@@ -31,6 +31,7 @@ import ua.nure.tereshchenko.SummaryTask4.exception.Messages;
  * DB manager. Works with MySQL DB. Only the required DAO methods are
  * defined!
  *
+ * @author A.Tereshchenko
  */
 
 public final class DBManager {
@@ -95,7 +96,6 @@ public final class DBManager {
      *
      * @return DB connection.
      */
-  
     public Connection getConnection() throws DBException {
         Connection con = null;
         try {
@@ -145,6 +145,7 @@ public final class DBManager {
         }
         return categoriesMap;
     }
+
     /**
      * Find user with the given login.
      *
@@ -173,6 +174,7 @@ public final class DBManager {
         }
         return user;
     }
+
     /**
      * Find user with the given search.
      *
@@ -232,7 +234,7 @@ public final class DBManager {
     }
 
     /**
-     * Lock user with the given user identifier .
+     * Lock user with the given user identifier.
      *
      * @param idUser User identifier.
      * @return boolean.
@@ -261,7 +263,7 @@ public final class DBManager {
     }
 
     /**
-     * Unlock user with the given user identifier .
+     * Unlock user with the given user identifier.
      *
      * @param idUser User identifier.
      * @return boolean.
@@ -359,16 +361,16 @@ public final class DBManager {
         try {
             con = getConnection();
             switch (sorting) {
-                case "От дешовых":
+                case "Сначала дешевые":
                     pstmt = con.prepareStatement(SQL_FIND_EDITION_BY_SORTING_AND_TOPIC_PRICE_ASC);
                     break;
-                case "От догорих":
+                case "Сначала дорогие":
                     pstmt = con.prepareStatement(SQL_FIND_EDITION_BY_SORTING_AND_TOPIC_PRICE_DESC);
                     break;
-                case "По алфавиту":
+                case "В алфавитном порядке":
                     pstmt = con.prepareStatement(SQL_FIND_EDITION_BY_SORTING_AND_TOPIC_NAME_ASC);
                     break;
-                case "Против алфавита":
+                case "По убыванию":
                     pstmt = con.prepareStatement(SQL_FIND_EDITION_BY_SORTING_AND_TOPIC_NAME_DESC);
                     break;
             }
@@ -403,16 +405,16 @@ public final class DBManager {
             con = getConnection();
             stmt = con.createStatement();
             switch (sorting) {
-                case "От дешовых":
+                case "Сначала дешевые":
                     rs = stmt.executeQuery(SQL_FIND_EDITION_BY_SORTING_PRICE_ASC);
                     break;
-                case "От догорих":
+                case "Сначала дорогие":
                     rs = stmt.executeQuery(SQL_FIND_EDITION_BY_SORTING_PRICE_DESC);
                     break;
-                case "По алфавиту":
+                case "В алфавитном порядке":
                     rs = stmt.executeQuery(SQL_FIND_EDITION_BY_SORTING_NAME_ASC);
                     break;
-                case "Против алфавита":
+                case "По убыванию":
                     rs = stmt.executeQuery(SQL_FIND_EDITION_BY_SORTING_NAME_DESC);
                     break;
             }
@@ -1051,9 +1053,8 @@ public final class DBManager {
             con.setAutoCommit(false);
             con.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
             pstmt = con.prepareStatement(SQL_DELETE_EDITION);
-            Iterator <Integer> iterator = listIdEdition.iterator();
-            while (iterator.hasNext()) {
-                idEdition = iterator.next();
+            for (Integer integer : listIdEdition) {
+                idEdition = integer;
                 pstmt.setInt(1, idEdition);
                 if (pstmt.executeUpdate() > 0) {
                     flag = true;
@@ -1089,9 +1090,7 @@ public final class DBManager {
         try {
             con = getConnection();
             pstmt = con.prepareStatement(SQL_FIND_EDITION_BY_ID);
-            Iterator <Integer> iterator = listIdEdition.iterator();
-            while (iterator.hasNext()) {
-                int idEdition = iterator.next();
+            for (int idEdition : listIdEdition) {
                 pstmt.setInt(1, idEdition);
                 rs = pstmt.executeQuery();
                 while (rs.next()) {
@@ -1223,7 +1222,6 @@ public final class DBManager {
      * @param rs Result set from which a user entity will be extracted.
      * @return User entity
      */
-
     private User extractUser(ResultSet rs) throws SQLException {
         User user = new User();
         user.setId(rs.getInt(Fields.ENTITY_ID));
@@ -1245,7 +1243,6 @@ public final class DBManager {
      * @param rs Result set from which a edition entity will be extracted.
      * @return Edition entity
      */
-
     private Edition extractEdition(ResultSet rs) throws SQLException {
         Edition edition = new Edition();
         edition.setId(rs.getInt(Fields.ENTITY_ID));
@@ -1261,7 +1258,6 @@ public final class DBManager {
      * @param rs Result set from which a category entity will be extracted.
      * @return Category entity
      */
-
     private Category extractCategory(ResultSet rs) throws SQLException {
         Category category = new Category();
         category.setId(rs.getInt(Fields.ENTITY_ID));
@@ -1275,7 +1271,6 @@ public final class DBManager {
      * @param rs Result set from which a order entity will be extracted.
      * @return Order entity
      */
-
     private Order extractOrder(ResultSet rs) throws SQLException {
         Order order = new Order();
         order.setId(rs.getInt(Fields.ENTITY_ID));

@@ -15,6 +15,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Registration command.
+ *
+ * @author A.Tereshchenko
+ */
 public class RegistrationCommand extends Command {
     private static final Logger LOG = Logger.getLogger(RegistrationCommand.class);
 

@@ -1,7 +1,9 @@
 package ua.nure.tereshchenko.SummaryTask4;
+
 /**
  * Path holder (jsp pages, controller commands).
  *
+ * @author A.Tereshchenko
  */
 public final class Path {
     // pages

@@ -17,6 +17,11 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Unsubscribe command.
+ *
+ * @author A.Tereshchenko
+ */
 public class UnsubscribeCommand extends Command {
     private static final Logger LOG = Logger.getLogger(UnsubscribeCommand.class);
 

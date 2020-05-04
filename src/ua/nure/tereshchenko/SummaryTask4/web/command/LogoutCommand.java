@@ -11,11 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Logout command.
+ *
+ * @author A.Tereshchenko
+ */
 public class LogoutCommand extends Command {
     private static final Logger LOG = Logger.getLogger(LogoutCommand.class);
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, AppException {
-       LOG.debug("Command 'logoutCommand' starts");
+        LOG.debug("Command 'logoutCommand' starts");
         HttpSession session = request.getSession(false);
         if (session != null) {
             session.invalidate();

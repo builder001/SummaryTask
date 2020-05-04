@@ -15,6 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Open settings command.
+ *
+ * @author A.Tereshchenko
+ */
 public class OpenSettingsCommand extends Command {
     private static final Logger LOG = Logger.getLogger(OpenSettingsCommand.class);
     @Override
