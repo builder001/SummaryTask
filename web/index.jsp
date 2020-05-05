@@ -7,8 +7,8 @@
 
 <body>
 
-<a href="jsp/login.jsp"><fmt:message key="index_jsp.link.login"/></a> &nbsp;
-<a href="jsp/signup.jsp"><fmt:message key="index_jsp.link.signup"/></a>
+<a href="login.jsp"><fmt:message key="index_jsp.link.login"/></a> &nbsp;
+<a href="WEB-INF/jsp/signup.jsp"><fmt:message key="index_jsp.link.signup"/></a>
 <p>
     <%@ include file="/WEB-INF/jspf/selectLanguage.jspf" %>
 </p>

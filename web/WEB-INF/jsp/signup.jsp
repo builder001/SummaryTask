@@ -19,7 +19,7 @@
         return (str == null) || (str.length === 0);
     }
 </script>
-<a href="../index.jsp"><fmt:message key="signup_jsp.link.main"/></a>
+<a href="../../index.jsp"><fmt:message key="signup_jsp.link.main"/></a>
 <p></p>
 <fieldset id="registration_form">
     <legend><fmt:message key="signup_jsp.legend.registration"/></legend>

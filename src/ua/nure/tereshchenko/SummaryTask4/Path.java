@@ -7,18 +7,18 @@ package ua.nure.tereshchenko.SummaryTask4;
  */
 public final class Path {
     // pages
-    public static final String OPEN_PAGE_LOGIN = "/jsp/login.jsp";
-    public static final String PAGE_USER = "/jsp/client/user.jsp";
-    public static final String PAGE_ADMIN = "/jsp/admin/admin.jsp";
-    public static final String PAGE_REGSUC = "/jsp/regSuc.jsp";
-    public static final String PAGE_ACCOUNT = "/jsp/account.jsp";
-    public static final String PAGE_FUND_ACCOUNT = "/jsp/fundAccount.jsp";
-    public static final String PAGE_ERROR_PAGE = "/jsp/error_page.jsp";
+    public static final String OPEN_PAGE_LOGIN = "/login.jsp";
+    public static final String PAGE_USER = "/WEB-INF/jsp/reader/user.jsp";
+    public static final String PAGE_ADMIN = "/WEB-INF/jsp/admin/admin.jsp";
+    public static final String PAGE_REGSUC = "/WEB-INF/jsp/regSuc.jsp";
+    public static final String PAGE_ACCOUNT = "/WEB-INF/jsp/account.jsp";
+    public static final String PAGE_FUND_ACCOUNT = "/WEB-INF/jsp/fundAccount.jsp";
+    public static final String PAGE_ERROR_PAGE = "/WEB-INF/jsp/error_page.jsp";
     public static final String OPEN_PAGE_INDEX = "/index.jsp";
-    public static final String OPEN_PAGE_ADD_EDITION = "/jsp/admin/addEdition.jsp";
-    public static final String OPEN_PAGE_EDIT_EDITION = "/jsp/admin/editEdition.jsp";
-    public static final String OPEN_PAGE_LOCK = "/jsp/admin/lock.jsp";
-    public static final String PAGE_SETTINGS = "/jsp/settings.jsp";
+    public static final String OPEN_PAGE_ADD_EDITION = "/WEB-INF/jsp/admin/addEdition.jsp";
+    public static final String OPEN_PAGE_EDIT_EDITION = "/WEB-INF/jsp/admin/editEdition.jsp";
+    public static final String OPEN_PAGE_LOCK = "/WEB-INF/jsp/admin/lock.jsp";
+    public static final String PAGE_SETTINGS = "/WEB-INF/jsp/settings.jsp";
     // commands
     public static final String COMMAND_ADMIN = "/controller?command=admin";
     public static final String COMMAND_USER = "/controller?command=user";

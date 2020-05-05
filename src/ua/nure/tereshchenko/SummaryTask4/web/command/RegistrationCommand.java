@@ -29,7 +29,7 @@ public class RegistrationCommand extends Command {
         HttpSession httpSession = request.getSession();
         DBManager manager = DBManager.getInstance();
         String login = request.getParameter("login");
-        LOG.trace("Request parameter: loging --> " + login);
+        LOG.trace("Request parameter: login --> " + login);
         String password = request.getParameter("password");
         LOG.trace("Request parameter: password --> " + password);
         String firstName = request.getParameter("first_name");

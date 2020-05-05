@@ -8,7 +8,7 @@
 </head>
 <body>
 <c:if test="${empty user}">
-    <c:redirect url="/jsp/login.jsp"/>
+    <c:redirect url="/login.jsp"/>
 </c:if>
 <c:if test="${not empty user and userRole.name == 'admin'}">
     <p>

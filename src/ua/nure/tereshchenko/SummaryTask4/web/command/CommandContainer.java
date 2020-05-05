@@ -13,8 +13,7 @@ import java.util.TreeMap;
 public class CommandContainer {
     private static final Logger LOG = Logger.getLogger(CommandContainer.class);
 
-    
-    private static Map <String, Command> commands = new TreeMap <String, Command>();
+    private static Map <String, Command> commands = new TreeMap<>();
 
     static {
         // common commands
@@ -26,7 +25,7 @@ public class CommandContainer {
         commands.put("subscribe", new SubscribeCommand());
         commands.put("unsubscribe", new UnsubscribeCommand());
         commands.put("noCommand", new NoCommand());
-        //client commands
+        //reader commands
         commands.put("user", new OpenUserCommand());
         commands.put("account", new AccountCommand());
         commands.put("fundAccount", new FundAccountCommand());

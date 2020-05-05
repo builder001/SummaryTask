@@ -1,6 +1,6 @@
 package ua.nure.tereshchenko.SummaryTask4.password;
 
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -16,14 +16,12 @@ public final class Password {
     /**
      * @param str Plain password string.
      * @return hashed password string.
-     * @throws NoSuchAlgorithmException
-     * @throws UnsupportedEncodingException
      */
-    public static String hash(String str) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+    public static String hash(String str) throws NoSuchAlgorithmException {
         MessageDigest digest;
-        StringBuffer hexString = new StringBuffer();
+        StringBuilder hexString = new StringBuilder();
         digest = MessageDigest.getInstance("SHA-512");
-        digest.update(str.getBytes("UTF-8"));
+        digest.update(str.getBytes(StandardCharsets.UTF_8));
         for (byte d : digest.digest()) {
             hexString.append(getFirstHexDigit(d)).append(getSecondHexDigit(d));
         }
@@ -36,5 +34,14 @@ public final class Password {
 
     private static char getSecondHexDigit(byte x) {
         return HEX_DIGITS[(0xFF & x) % 16];
+    }
+
+    public static void main(String[] args) throws NoSuchAlgorithmException {
+        String plainAdmin = "Admin123";
+        String plainLibrarian = "Librarian123";
+        String plainReader = "Reader123";
+        System.out.println(hash(plainAdmin));
+        System.out.println(hash(plainLibrarian));
+        System.out.println(hash(plainReader));
     }
 }

@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<a href="../index.jsp"><fmt:message key="login_jsp.link.main"/></a> &nbsp;
-<a href="signup.jsp"><fmt:message key="login_jsp.link.signup"/></a>
+<a href="index.jsp"><fmt:message key="login_jsp.link.main"/></a> &nbsp;
+<a href="controller?command=registration"><fmt:message key="login_jsp.link.signup"/></a>
 <p></p>
 
 <form id="login_form" action="controller" method="post">
@@ -27,7 +27,7 @@
                required/>
     </fieldset>
     <br/>
-    <input type="submit" value="<fmt:message key="login_jsp.form.submit_come_in"/>">
+    <input type="submit" value="<fmt:message key="login_jsp.form.login"/>">
 </form>
 
 </body>

@@ -6,7 +6,7 @@
     <title>Successfully</title>
 </head>
 <body>
-<a href="login.jsp">Войти</a><br/>
+<a href="../../login.jsp">Войти</a><br/>
 <h3>Регистрация завершена!</h3>
 </body>
 </html>
