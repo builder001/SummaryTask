@@ -1,17 +1,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="mytag" uri="/WEB-INF/tags/tld/implicit.tld" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Client</title>
+    <title>Reader</title>
 </head>
 <body>
-<c:if test="${not empty user and userRole.name == 'client'}">
+<c:if test="${not empty user and userRole.name == 'reader'}">
     <p>
             <c:out value="${user.firstName} ${user.lastName}"/> &nbsp;
         <c:if test="${not empty userRole}">
-        (<fmt:message key="label.role.client"/>) &nbsp;
+        (<fmt:message key="label.role.reader"/>) &nbsp;
         </c:if>
             <fmt:message key="label.bill"/>:
             <c:out value="${user.bill}"/> <fmt:message key="label.grn"/>.&nbsp;

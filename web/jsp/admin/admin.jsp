@@ -34,57 +34,52 @@
     </p>
     <%@ include file="/WEB-INF/jspf/searchAndSorting.jspf" %>
 
-    
     <form action="controller" method="post">
         <input type="hidden" name="command" value="admin">
         <button type="submit" name="add" value="add"><fmt:message key="button.add_edition"/></button>
     </form>
+
     <form>
         <button type="submit" name="command" value="deleteEdition" form="form1"><fmt:message
                 key="button.delete_edition"/></button>
     </form>
-    
-    
 
-     <form>
+    <form>
         <button type="submit" name="command" value="editEdition" form="form1"><fmt:message
                 key="button.edit_edition"/></button>
-     </form>
+    </form>
 
-
-    
     <form>
         <button type="submit" name="command" value="subscribe" form="form1"><fmt:message
                 key="button.subscribe_edition"/></button>
-      </form>
-    
-    
+    </form>
+
     <script>
         var sum = 0;
         var set = new Set();
+
         function total(id) {
             var cost = Number(document.getElementById(id).value);
             var status = document.getElementById("status");
             if (set.has(id)) {
                 sum -= cost;
                 set.delete(id);
-            }
-            else {
+            } else {
                 sum += cost;
                 set.add(id);
             }
             status.innerHTML = "<fmt:message key="label.total"/>: " + sum;
         }
+
         function getSum() {
             return sum;
         }
     </script>
 
-
-     <fieldset>
+    <fieldset>
         <legend><fmt:message key="index_jsp.legend.edition"/></legend>
         <form id="form1" action="controller" method="post">
-        
+
             <c:forEach items="${editionList}" var="item">
                 <p>
                     <input type="checkbox" name="${item.id}" value="${item.price}" id="${item.id}"
@@ -100,7 +95,7 @@
             </p>
         </form>
     </fieldset>
- 
+
 </c:if>
 </body>
 </html>

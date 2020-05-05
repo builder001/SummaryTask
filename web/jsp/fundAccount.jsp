@@ -14,8 +14,8 @@
         <c:if test="${userRole.name == 'admin'}">
             (<fmt:message key="label.role.admin"/>)&nbsp;
         </c:if>
-        <c:if test="${userRole.name == 'client'}">
-            ( <fmt:message key="label.role.client"/>)&nbsp;
+        <c:if test="${userRole.name == 'reader'}">
+            ( <fmt:message key="label.role.reader"/>)&nbsp;
         </c:if>
     </c:if>
     <fmt:message key="label.bill"/>:

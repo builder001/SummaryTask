@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="mytag" uri="/WEB-INF/tags/tld/implicit.tld" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Account</title>
@@ -17,15 +17,15 @@
         <c:if test="${userRole.name == 'admin'}">
             (<fmt:message key="label.role.admin"/>)&nbsp;
         </c:if>
-        <c:if test="${userRole.name == 'client'}">
-           ( <fmt:message key="label.role.client"/>)&nbsp;
+        <c:if test="${userRole.name == 'reader'}">
+           ( <fmt:message key="label.role.reader"/>)&nbsp;
         </c:if>
     </c:if>
     <fmt:message key="label.bill"/>:
     <c:out value="${user.bill}"/> <fmt:message key="label.grn"/>.&nbsp;
     <c:set var="role" value="${userRole.name}"/>
     <c:choose>
-        <c:when test="${role == 'client'}">
+        <c:when test="${role == 'reader'}">
             <form action="controller" method="post">
                 <input type="hidden" name="command" value="user">
                 <input type="submit" value="<fmt:message key="button.main"/>"/>

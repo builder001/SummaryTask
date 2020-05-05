@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Settings</title>
@@ -14,8 +14,8 @@
         <c:if test="${userRole.name == 'admin'}">
             (<fmt:message key="label.role.admin"/>)&nbsp;
         </c:if>
-        <c:if test="${userRole.name == 'client'}">
-            ( <fmt:message key="label.role.client"/>)&nbsp;
+        <c:if test="${userRole.name == 'reader'}">
+            ( <fmt:message key="label.role.reader"/>)&nbsp;
         </c:if>
     </c:if>
     <fmt:message key="label.bill"/>:
@@ -55,13 +55,13 @@
         function isEmail() {
             var str = document.getElementById("email").value;
             var status = document.getElementById("status");
-            var re = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
+            var re = /^[^\s()<>@,;:\/]+@\w[\w.-]+\.[a-z]{2,}$/i;
             if (re.test(str)) status.innerHTML = "<fmt:message key="signup_jsp.massage.address_correct"/>";
             else status.innerHTML = "<fmt:message key="signup_jsp.massage.address_incorrect"/>";
             if (isEmpty(str)) status.innerHTML = "<fmt:message key="signup_jsp.massage.empty_field"/>";
         }
         function isEmpty(str) {
-            return (str == null) || (str.length == 0);
+            return (str == null) || (str.length === 0);
         }
     </script>
 
