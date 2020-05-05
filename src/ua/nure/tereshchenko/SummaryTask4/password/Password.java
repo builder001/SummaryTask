@@ -35,13 +35,4 @@ public final class Password {
     private static char getSecondHexDigit(byte x) {
         return HEX_DIGITS[(0xFF & x) % 16];
     }
-
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-        String plainAdmin = "Admin123";
-        String plainLibrarian = "Librarian123";
-        String plainReader = "Reader123";
-        System.out.println(hash(plainAdmin));
-        System.out.println(hash(plainLibrarian));
-        System.out.println(hash(plainReader));
-    }
 }
