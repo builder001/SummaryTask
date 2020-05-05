@@ -7,6 +7,7 @@
     <title>Error</title>
 </head>
 <body>
+
 <c:if test="${backToUser != null}">
     <a href="${backToUser}">Назад</a>
 </c:if>
@@ -14,8 +15,6 @@
 <table id="main-container">
     <tr >
         <td class="content">
-            
-
             <h2 class="error">
                 The following error occurred
             </h2>
@@ -36,12 +35,9 @@
                 <% exception.printStackTrace(new PrintWriter(out)); %>
             </c:if>
 
-            
             <c:if test="${not empty requestScope.errorMessage}">
                 <h3>${requestScope.errorMessage}</h3>
             </c:if>
-
-            
         </td>
     </tr>
 </table>

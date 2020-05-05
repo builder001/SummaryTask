@@ -13,10 +13,10 @@
     <fmt:message key="index_jsp.label.sorting"/>: &nbsp;
     <select name="selectSorting" size="1">
         <option value="Не выбрано"><fmt:message key="index_jsp.sorting_option.not_selected"/></option>
-        <option value="От дешовых"><fmt:message key="index_jsp.sorting_option.price_from_cheap_to_expensive"/></option>
-        <option value="От догорих"><fmt:message key="index_jsp.sorting_option.price_from_expensive_to_cheap"/></option>
-        <option value="По алфавиту"><fmt:message key="index_jsp.sorting_option.from_A_to_Z"/></option>
-        <option value="Против алфавита"><fmt:message key="index_jsp.sorting_option.from_Z_to_A"/></option>
+        <option value="Сначала дешевые"><fmt:message key="index_jsp.sorting_option.price_from_cheap_to_expensive"/></option>
+        <option value="Сначала дорогие"><fmt:message key="index_jsp.sorting_option.price_from_expensive_to_cheap"/></option>
+        <option value="В алфавитном порядке"><fmt:message key="index_jsp.sorting_option.from_A_to_Z"/></option>
+        <option value="По убыванию"><fmt:message key="index_jsp.sorting_option.from_Z_to_A"/></option>
     </select>&nbsp;
     <fmt:message key="index_jsp.label.topic"/>: &nbsp;
     <select name="selectTopic" size="1">

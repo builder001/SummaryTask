@@ -8,7 +8,7 @@
 <body>
 <c:if test="${not empty user}">
     <p>
-            <c:out value="${user.firstName} ${user.lastName}"/> &nbsp;
+    <c:out value="${user.firstName} ${user.lastName}"/> &nbsp;
 
     <c:if test="${not empty userRole}">
         <c:if test="${userRole.name == 'admin'}">
@@ -19,7 +19,7 @@
         </c:if>
     </c:if>
     <fmt:message key="label.bill"/>:
-            <c:out value="${user.bill}"/> <fmt:message key="label.grn"/>.&nbsp;
+    <c:out value="${user.bill}"/> <fmt:message key="label.grn"/>.&nbsp;
 
     <c:set var="role" value="${userRole.name}"/>
 
