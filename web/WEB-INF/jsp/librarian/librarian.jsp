@@ -4,82 +4,59 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Admin</title>
+    <title>Librarian</title>
 </head>
 <body>
-<c:if test="${empty user}">
-    <c:redirect url="/login.jsp"/>
-</c:if>
-<c:if test="${not empty user and userRole.name == 'admin'}">
+<c:if test="${not empty user and userRole.name == 'librarian'}">
     <p>
             <c:out value="${user.firstName} ${user.lastName}"/> &nbsp;
         <c:if test="${not empty userRole}">
-        (<fmt:message key="label.role.admin"/>) &nbsp;
+        (<fmt:message key="label.role.librarian"/>) &nbsp;
         </c:if>
             <fmt:message key="label.bill"/>:
             <c:out value="${user.bill}"/> <fmt:message key="label.grn"/>.&nbsp;
     <p>
         <%@ include file="/WEB-INF/jspf/selectLanguage.jspf" %>
     </p>
-
     <form action="controller" method="post">
         <input type="hidden" name="command" value="account">
-        <input type="submit" value=" <fmt:message key="button.account"/>"/>
+        <input type="submit" value="<fmt:message key="button.account"/>"/>
     </form>
-
     <form action="controller" method="post">
         <input type="hidden" name="command" value="logout">
-        <input type="submit" value=" <fmt:message key="button.logOut"/>"/>
+        <input type="submit" value="<fmt:message key="button.logOut"/>"/>
     </form>
+
     </p>
     <%@ include file="/WEB-INF/jspf/searchAndSorting.jspf" %>
 
-    <form action="controller" method="post">
-        <input type="hidden" name="command" value="admin">
-        <button type="submit" name="add" value="add"><fmt:message key="button.add_edition"/></button>
-    </form>
-
-    <form>
-        <button type="submit" name="command" value="deleteEdition" form="form1"><fmt:message
-                key="button.delete_edition"/></button>
-    </form>
-
-    <form>
-        <button type="submit" name="command" value="editEdition" form="form1"><fmt:message
-                key="button.edit_edition"/></button>
-    </form>
-
-    <form>
-        <button type="submit" name="command" value="subscribe" form="form1"><fmt:message
-                key="button.subscribe_edition"/></button>
-    </form>
 
     <script>
         var sum = 0;
         var set = new Set();
-
         function total(id) {
             var cost = Number(document.getElementById(id).value);
             var status = document.getElementById("status");
             if (set.has(id)) {
                 sum -= cost;
                 set.delete(id);
-            } else {
+            }
+            else {
                 sum += cost;
                 set.add(id);
             }
             status.innerHTML = "<fmt:message key="label.total"/>: " + sum;
         }
-
         function getSum() {
             return sum;
         }
     </script>
 
+
     <fieldset>
         <legend><fmt:message key="index_jsp.legend.edition"/></legend>
-        <form id="form1" action="controller" method="post">
-
+        <form action="controller" method="post">
+            <input type="hidden" name="command" value="subscribe">
             <c:forEach items="${editionList}" var="item">
                 <p>
                     <input type="checkbox" name="${item.id}" value="${item.price}" id="${item.id}"
@@ -91,11 +68,11 @@
                 </p>
             </c:forEach>
             <p>
+                <input type="submit" value="<fmt:message key="button.subscribe_edition"/>">&nbsp;
                 <span id="status"></span>
             </p>
         </form>
     </fieldset>
-
 </c:if>
 </body>
 </html>

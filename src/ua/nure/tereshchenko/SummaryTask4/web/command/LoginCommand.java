@@ -92,6 +92,10 @@ public class LoginCommand extends Command {
             forward = Path.COMMAND_ADMIN;
         }
 
+        if (userRole == Role.LIBRARIAN) {
+            forward = Path.COMMAND_LIBRARIAN;
+        }
+
         if (userRole == Role.READER) {
             forward = Path.COMMAND_USER;
         }

@@ -9,6 +9,7 @@ public final class Path {
     // pages
     public static final String OPEN_PAGE_LOGIN = "/login.jsp";
     public static final String PAGE_USER = "/WEB-INF/jsp/reader/user.jsp";
+    public static final String PAGE_LIBRARIAN = "/WEB-INF/jsp/librarian/librarian.jsp";
     public static final String PAGE_ADMIN = "/WEB-INF/jsp/admin/admin.jsp";
     public static final String PAGE_REGSUC = "/WEB-INF/jsp/regSuc.jsp";
     public static final String PAGE_ACCOUNT = "/WEB-INF/jsp/account.jsp";
@@ -22,6 +23,7 @@ public final class Path {
     // commands
     public static final String COMMAND_ADMIN = "/controller?command=admin";
     public static final String COMMAND_USER = "/controller?command=user";
+    public static final String COMMAND_LIBRARIAN = "/controller?command=librarian";
     public static final String COMMAND_REGISTRATION_SUCCESSFULLY = "/controller?command=registrationSuccessfully&createUser=1";
     public static final String COMMAND_FUND_ACCOUNT = "/controller?command=fundAccount";
     public static final String COMMAND_SETTINGS = "/controller?command=openSettings";

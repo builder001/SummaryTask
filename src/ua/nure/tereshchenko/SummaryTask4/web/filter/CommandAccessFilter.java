@@ -35,7 +35,7 @@ public class CommandAccessFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) {
-        LOG.debug("Filter initialization starts");
+        /*LOG.debug("Filter initialization starts");
 
         // roles
         accessMap.put(Role.ADMIN, asList(filterConfig.getInitParameter("admin")));
@@ -50,7 +50,7 @@ public class CommandAccessFilter implements Filter {
         outOfControl = asList(filterConfig.getInitParameter("out-of-control"));
         LOG.trace("Out of control commands --> " + outOfControl);
 
-        LOG.debug("Filter initialization finished");
+        LOG.debug("Filter initialization finished");*/
     }
 
     /**

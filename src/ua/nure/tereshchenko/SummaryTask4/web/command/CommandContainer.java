@@ -32,6 +32,8 @@ public class CommandContainer {
         commands.put("replenish", new ReplenishCommand());
         commands.put("settings", new SettingsCommand());
         commands.put("openSettings", new OpenSettingsCommand());
+        // librarian commands
+        commands.put("librarian", new OpenLibrCommand());
         // admin commands
         commands.put("admin", new OpenAdminCommand());
         commands.put("addEdition", new AddEditionCommand());

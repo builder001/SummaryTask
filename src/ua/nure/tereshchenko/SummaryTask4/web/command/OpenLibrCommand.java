@@ -1,9 +1,10 @@
 package ua.nure.tereshchenko.SummaryTask4.web.command;
 
 import org.apache.log4j.Logger;
-
 import ua.nure.tereshchenko.SummaryTask4.Path;
 import ua.nure.tereshchenko.SummaryTask4.db.DBManager;
+import ua.nure.tereshchenko.SummaryTask4.db.Role;
+import ua.nure.tereshchenko.SummaryTask4.db.UserLock;
 import ua.nure.tereshchenko.SummaryTask4.db.entity.Category;
 import ua.nure.tereshchenko.SummaryTask4.db.entity.Edition;
 import ua.nure.tereshchenko.SummaryTask4.db.entity.User;
@@ -18,30 +19,37 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Open admin command.
+ * Open librarian command.
  *
  * @author A.Tereshchenko
  */
-public class OpenAdminCommand extends Command {
-    private static final Logger LOG = Logger.getLogger(OpenAdminCommand.class);
+public class OpenLibrCommand extends Command {
+    private static final Logger LOG = Logger.getLogger(OpenLibrCommand.class);
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, AppException {
-        LOG.debug("Command 'openAdminCommand' starts");
+        LOG.debug("Command 'openLibrarianCommand' starts");
         HttpSession httpSession = request.getSession();
         DBManager manager = DBManager.getInstance();
-        String forward = Path.PAGE_ADMIN;
+        String forward;
         User user = (User) httpSession.getAttribute("user");
-        LOG.trace("Get the session attribute 'user' --> " + user);
-        if ((user == null) && (request.getParameter("add") != null)) {
+        LOG.trace("Get the attribute 'user' --> " + user);
+        if (user == null) {
             forward = Path.OPEN_PAGE_LOGIN;
-        }else if(user == null){
-            forward = Path.OPEN_PAGE_LOGIN;
-        }  else{
+        } else {
             user = manager.findUserByLogin(user.getLogin());
             LOG.trace("Update attribute 'user' --> " + user);
+            UserLock userLock = UserLock.getUserLock(user);
+            LOG.trace("userLock --> " + userLock);
+            if (userLock == UserLock.LOCK) {
+                throw new AppException("User locked");
+            }
+            Role userRole = Role.getRole(user);
+            LOG.trace("userRole --> " + userRole);
             httpSession.setAttribute("user", user);
             LOG.trace("Set the session attribute: user --> " + user);
+            httpSession.setAttribute("userRole", userRole);
+            LOG.trace("Set the session attribute: userRole --> " + userRole);
             String selectSorting = request.getParameter("selectSorting");
             LOG.trace("Request parameter: selectSorting --> " + selectSorting);
             String selectTopic = request.getParameter("selectTopic");
@@ -53,30 +61,14 @@ public class OpenAdminCommand extends Command {
             if (selectSorting == null & selectTopic == null & searchEdition == null) {
                 editionList = manager.findAllEdition();
                 httpSession.setAttribute("editionList", editionList);
-                LOG.trace("Set the session attribute: editionList --> " + editionList);
+                LOG.trace("Set the session attribute 'editionList' --> " + editionList);
                 httpSession.setAttribute("categoryList", categoryList);
-                LOG.trace("Set the session attribute: categoryList --> " + categoryList);
+                LOG.trace("Set the session attribute 'categoryList' --> " + categoryList);
             }
-            if (request.getParameter("add") != null) {
-                forward = Path.OPEN_PAGE_ADD_EDITION;
-            }
-
-            if (request.getParameter("lock") != null) {
-                // librarian role added
-                String[] role = {"admin", "reader", "librarian"};
-                String[] userLock = {"lock", "unlock"};
-                List<User> listAllUser = manager.findAllUser();
-                httpSession.setAttribute("allUser", listAllUser);
-                LOG.trace("Set the session attribute: allUser --> " + listAllUser);
-                httpSession.setAttribute("role", role);
-                LOG.trace("Set the session attribute: role --> " + role);
-                httpSession.setAttribute("userLock", userLock);
-                LOG.trace("Set the session attribute: userLock --> " + userLock);
-                forward = Path.OPEN_PAGE_LOCK;
-            }
+            forward = Path.PAGE_LIBRARIAN;
         }
-        LOG.debug("forward --> " + forward);
-        LOG.debug("Command 'openAdminCommand' finished");
+        LOG.trace("forward --> " + forward);
+        LOG.debug("Command 'openUserCommand' finished");
         return forward;
     }
 }

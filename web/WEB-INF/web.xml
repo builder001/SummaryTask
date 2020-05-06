@@ -51,7 +51,7 @@
 	4) out-of-control: commands without access control
 	Delimiter - space/tab
 	=============================================================-->
-	<filter>
+	<!--<filter>
 		<filter-name>CommandAccessFilter</filter-name>
 		<filter-class>ua.nure.tereshchenko.SummaryTask4.web.filter.CommandAccessFilter</filter-class>
 		<init-param>
@@ -68,14 +68,14 @@
 		</init-param>
 		<init-param>
 			<param-name>out-of-control</param-name>
-			<param-value>login</param-value>
+			<param-value>login registration</param-value>
 		</init-param>
 	</filter>
 
 	<filter-mapping>
 		<filter-name>CommandAccessFilter</filter-name>
 		<servlet-name>Controller</servlet-name>
-	</filter-mapping>
+	</filter-mapping>-->
 
 	<!--============================================================
 	Context Listener
